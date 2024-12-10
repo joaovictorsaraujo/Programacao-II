@@ -1,4 +1,5 @@
-def armazena(contatos):
+import os
+def armazena_in_dic(contatos):
     arq = open(contatos, 'rt')
     linha = arq.readline().strip()
     agenda = {}
@@ -12,29 +13,39 @@ def armazena(contatos):
     return agenda
 
 def adicionar(contato, nome, email, agenda):
-    if contato not in agenda:
-        agenda[contato] = [nome, email]
-    
-    arq = open('7_arquivo.txt', 'wt')
-    arq.write(agenda)
+    agenda[contato] = [nome, email]
+    txt = ('\n' + str(contato) + ', ' + str(nome) + ', ' + str(email))
+        
+    arq = open('7_arquivo.txt', 'a')
+    arq.write(txt)
     arq.close()
     return agenda
 
+def printa(agenda):
+    print("Lista telefônica: ")
+    print(f"{'Contato':<21}{'Nome':<20}{'E-mail'}")
+    print()
+    for contato in agenda:
+        print(f'{contato:<20}{agenda[contato][0]:<20}{agenda[contato][1]}')
+
 def main():
-    print('Adicionar contato: 1, Remover contato: 2, Buscar contato: 3')
     arquivo = '7_arquivo.txt'
-    contatos = armazena(arquivo)
+    contatos = armazena_in_dic(arquivo)
+    printa(contatos)
+    print('Adicionar contato: 1, Remover contato: 2, Buscar contato: 3')
     acao = int(input(('O que deseja fazer? ')))
 
     while acao != '':
+        os.system('cls')
         if acao == 1:
             cont = input('Digite um contato: ')
             while cont != '':
                 name = input('Digite o nome: ')
                 email = input('Digite o e-mail: ')
                 contatos = adicionar(cont, name, email, contatos)
-                cont = input('Digite outro contato: ')
-            print(contatos)
-            print()
-            acao = input('O que deseja fazer agora? ')
+                cont = input('Digite outro contato ou aperte enter para sair: ')
+        os.system('cls')
+        printa(contatos)
+        print()
+        acao = input('O que deseja fazer agora? ')
 main()
