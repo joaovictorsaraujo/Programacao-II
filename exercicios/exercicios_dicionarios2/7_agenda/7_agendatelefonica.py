@@ -12,6 +12,6 @@ def armazena(contatos):
     return agenda
 
 def main():
-    arquivo = armazena("7_arquivo.txt")
+    arquivo = '7_arquivo.txt'
     print(armazena(arquivo))
 main()
