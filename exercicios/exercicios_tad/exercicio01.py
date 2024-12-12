@@ -14,5 +14,5 @@ def main():
     tadpessoa = abre_arq("dados.txt")
     for pessoa in tadpessoa:
         if td.getIdade(pessoa):
-            print(f'Nome: {td.getNome(pessoa)}, Idade: {td.getIdade(pessoa)}, Peso: {td.getPeso(pessoa)}, Altura: {td.getAltura(pessoa)}, IMC: {td.imc(pessoa)}')
+            print(f'Nome: {td.getNome(pessoa)}, Idade: {td.getIdade(pessoa)}, Peso: {td.getPeso(pessoa)}, Altura: {td.getAltura(pessoa)}, IMC: {td.imc(pessoa):.3f}')
 main()
