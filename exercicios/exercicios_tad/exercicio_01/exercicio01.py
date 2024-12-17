@@ -1,4 +1,4 @@
-import tadpessoa as td
+import exercicios.exercicios_tad.exercicio_01.tadpessoa as td
 def abre_arq(nome_arq):
     arq = open(nome_arq, 'rt')
     pessoa = arq.readline()
