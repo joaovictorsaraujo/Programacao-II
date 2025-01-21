@@ -2,25 +2,28 @@ def new_poli(poli):
     dic = {}
     termo = ''
     lista = []
-    
-    # for i in poli:
-    #     lst.append(i)
-
 
     for char in poli:
         if char == '-':
-            lista.append(termo)
+            lista.append(termo.upper())
             termo = char
             continue
         if char == '+':
-            lista.append(termo)
+            lista.append(termo.upper())
             termo = ''
             continue
         termo = termo + char
     lista.append(termo)
     if lista[0] == '':
         del lista[0]
-    return lista
+
+    for n in lista:
+        lst = n.split('X')
+        if len(lst) == 1:
+            dic['1'] = lst[0]
+        else:
+            dic[lst[1]] = lst[0]
+    return dic
 
 def main():
     poli = "-2X4-5X7+44"
