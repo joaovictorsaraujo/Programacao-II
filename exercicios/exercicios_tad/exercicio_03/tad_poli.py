@@ -46,20 +46,7 @@ def multiplica_poli(p1, p2):
     return dic
 
 def subtrai_poli(p1, p2):
-    # pS = {}
-    # for h in p2:
-    #     pS[h] = p2[h] * (-1)
-    # return soma_poli(p1, pS)
     dic = {}
     for i in p1:
         dic[i] = p1[i] - p2.get(i,0)
     return dic
-
-# def main():
-#     poli = "-3X2+2X+1"
-#     poli2 = "2X2+3X+1"
-#     print(new_poli(poli))
-#     print(new_poli(poli2))
-#     print()
-#     print(subtrai_poli(new_poli(poli), new_poli(poli2)))
-# main()
