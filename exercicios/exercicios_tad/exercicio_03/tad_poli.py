@@ -46,6 +46,7 @@ def multiplica_poli(p1, p2):
     return dic
 
 def subtrai_poli(p1, p2):
+<<<<<<< HEAD
     pS = {}
     dic = {}
     for h in p1:
@@ -63,3 +64,9 @@ def main():
     print()
     print(subtrai_poli(new_poli(poli), new_poli(poli2)))
 main()
+=======
+    dic = {}
+    for i in p1:
+        dic[i] = p1[i] - p2.get(i,0)
+    return dic
+>>>>>>> 96bd77dcfa44f9c4840d6bb0f9ca3c09473366b4
